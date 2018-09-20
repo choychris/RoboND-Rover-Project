@@ -46,6 +46,7 @@ class RoverState():
         self.pitch = None # Current pitch angle
         self.roll = None # Current roll angle
         self.vel = None # Current velocity
+        self.stop_steer = -15 
         self.steer = 0 # Current steering angle
         self.throttle = 0 # Current throttle value
         self.brake = 0 # Current brake value
@@ -62,6 +63,7 @@ class RoverState():
         self.stop_forward = 50 # Threshold to initiate stopping
         self.go_forward = 500 # Threshold to go forward again
         self.max_vel = 2 # Maximum velocity (meters/second)
+        self.basic_vel = 2 
         # Image output from perception step
         # Update this image to display your intermediate analysis steps
         # on screen in autonomous mode
