@@ -24,8 +24,8 @@
 
 [image1]: ./output/obstacle_mask.jpg
 [image2]: ./output/rock_thresh.png
-[image3]: ./output/test_mapping.png
-[image4]: ./output/Capture.png
+[image3]: ./output/test_mapping.PNG
+[image4]: ./output/Capture.PNG
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### I implement the codes and wite up this README to address the above Rubric for this project.
@@ -41,6 +41,7 @@ This is the README indicates the rubic :)
 #### 1. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
 
 * Selection of obstacles
+
 I use `mask = cv2.warpPerspective(np.ones_like(img[:,:,0]), M, (img.shape[1], img.shape[0]))` to create obstacles mask.
 The mask will be fit to red value of worldmap after coordinations mapping.
 ```
@@ -54,6 +55,7 @@ data.worldmap[obstacle_y_world, obstacle_x_world, 0] += 1
 ![alt text][image1]
 
 * Rock samples
+
 I use [inRnage function of opencv](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_colorspaces/py_colorspaces.html) to indentify dark-yellow rocks. Here is the code inside `color_thresh` funtion:
 ```
 # RGB to BGR gor opencv process
@@ -67,8 +69,9 @@ rock_mask = cv2.inRange(bgr, yellow_lower, yellow_upper)
 ![alt text][image2]
 
 #### 2. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
+
 In `process_image()` function, naviagte, obsticale and rock mapping to worldmap is implemented. 
-You may view the faster mp4 version of [this gif](./output)
+You may view the mp4 version [here](./output)
 ![alt text][image3]
 
 ### Autonomous Navigation and Mapping
